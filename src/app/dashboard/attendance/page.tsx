@@ -112,7 +112,7 @@ const CardAttendanceOverview = () => {
   );
 };
 
-export const attendacePage = () => {
+export default function AttendancePage() {
   return (
     <>
       <div className="flex items-center space-x-2 mb-6">
@@ -156,6 +156,4 @@ export const attendacePage = () => {
       </div>
     </>
   );
-};
-
-export default attendacePage;
+}

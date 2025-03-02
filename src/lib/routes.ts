@@ -42,6 +42,10 @@ const routes = {
       path: "/dashboard/settings",
     },
   },
+  
+  survey: {
+    path: '/survey',
+  },
 };
 
 export default routes;

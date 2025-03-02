@@ -63,9 +63,8 @@ export function DatePicker({ placeholder = "Select a date" }) {
         <Calendar
           className="bg-background rounded-[8px]"
           mode="single"
-          selected={date}
-          onSelect={setDate}
-          autoFocus
+          selected={date || undefined}
+          onSelect={(day) => setDate(day || null)}
         />
       </PopoverContent>
     </Popover>
@@ -109,7 +108,11 @@ export function DatePickerWithPresets() {
           </SelectContent>
         </Select>
         <div className="rounded-md border">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+          <Calendar
+            mode="single"
+            selected={date || undefined}
+            onSelect={(day) => setDate(day || null)}
+          />
         </div>
       </PopoverContent>
     </Popover>

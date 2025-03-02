@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { type z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { type z } from "zod";
 
-import { Form, FormField } from '@/components/ui/form';
+import { Form, FormField } from "@/components/ui/form";
 
-import routes from '@/lib/routes';
-import { login } from '@/lib/auth';
-import FormInput from '@/components/FormInput';
-import Button from '@/components/Button';
-import { loginSchema } from '@/schema/auth/login';
-import Checkbox from '@/components/Checkbox';
+import routes from "@/lib/routes";
+// import { login } from '@/lib/auth';
+import FormInput from "@/components/FormInput";
+import Button from "@/components/Button";
+import { loginSchema } from "@/schema/auth/login";
+import Checkbox from "@/components/Checkbox";
 
 type TLogin = z.infer<typeof loginSchema>;
 const LoginForm = () => {
@@ -27,8 +27,8 @@ const LoginForm = () => {
   const form = useForm<TLogin>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: process?.env?.NEXT_PUBLIC_CLIENT_EMAIL || '',
-      password: process?.env?.NEXT_PUBLIC_CLIENT_PASSWORD || '',
+      email: process?.env?.NEXT_PUBLIC_CLIENT_EMAIL || "",
+      password: process?.env?.NEXT_PUBLIC_CLIENT_PASSWORD || "",
     },
   });
   const {
@@ -40,7 +40,7 @@ const LoginForm = () => {
   const onSubmit = async (values: TLogin) => {
     setLoading(true);
     try {
-      await login(values);
+      // await login(values);
 
       navigate.push(routes.dashboard.entry.path);
     } catch (error) {
@@ -54,7 +54,7 @@ const LoginForm = () => {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(onSubmit, (err) => {
-            console.log('error is', err);
+            console.log("error is", err);
           })}
         >
           <FormField

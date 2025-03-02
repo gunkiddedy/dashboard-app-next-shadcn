@@ -30,6 +30,7 @@
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "cmdk": "^1.0.4",
     "date-fns": "^4.1.0",
     "form": "^0.2.5",
     "formik": "^2.4.5",

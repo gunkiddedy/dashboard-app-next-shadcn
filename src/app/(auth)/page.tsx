@@ -1,7 +1,7 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import routes from '@/lib/routes';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import routes from "@/lib/routes";
 
 export default function Home() {
   return (
@@ -21,11 +21,7 @@ export default function Home() {
 
           <div className="flex gap-4">
             <Link href={routes.survey.path}>
-              <Button
-                size="md"
-                backgroundColor="shark-950"
-                className="app_survey__btn"
-              >
+              <Button size="sm" className="app_survey__btn bg-shark-950">
                 Start survey
               </Button>
             </Link>

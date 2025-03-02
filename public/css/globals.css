@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 283 100% 99%;
+    --foreground: 252 14% 10%;
+
+    --card: 50 100% 98%;
+    --card-foreground: 252 14% 10%;
+
+    --popover: 50 100% 98%;
+    --popover-foreground: 252 14% 10%;
+
+    --primary-from: 259 60% 47%;
+    --primary-to: 295 60% 47%;
+
+    --primary: 259 60% 47%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 252 14% 10%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --gray-bold: 40, 2%, 27%, 1;
+    --gray-medium: 40 3% 53%;
+    --gray-light: 0, 0%, 93%, 1;
+
+    /* Accents */
+    --pink-500: 23 100% 60%;
+    --pink-400: 22 95% 71%;
+    --pink-300: 22 100% 80%;
+    --pink-200: 22 100% 87%;
+    --pink-100: 22 100% 94%;
+    --pink-foreground: 252 14% 10%;
+
+    --green-500: 121 44% 42%;
+    --green-400: 119 32% 56%;
+    --green-300: 115 32% 70%;
+    --green-200: 105 33% 84%;
+    --green-100: 87 36% 90%;
+
+    --yellow-500: 47 84% 58%;
+    --yellow-400: 47 83% 74%;
+    --yellow-300: 48 85% 82%;
+    --yellow-200: 44 88% 90%;
+    --yellow-100: 49 87% 94%;
+
+    --danger: 0 83% 34%;
+    --danger-foreground: 50 100% 98%;
+
+    --warning: 22 91% 76%;
+    --warning-foreground: 252 14% 10%;
+
+    --success: 137 69% 21%;
+    --success-foreground: 50 100% 98%;
+
+    --border-light: 39 2% 53%;
+    --border-medium: 40 2% 27%;
+    --grey-medium: 40 2% 27%;
+
+    --input: 214.3 31.8% 91.4%;
+    --disabled-input: 0 2% 88%;
+
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --primary-gradient: linear-gradient(
+      to bottom,
+      hsl(259 60% 47%) 0%,
+      hsl(295 60% 47%) 100%
+    );
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .bg-primary {
+    @apply bg-gradient-to-r from-primary-from to-primary-to;
+  }
+}

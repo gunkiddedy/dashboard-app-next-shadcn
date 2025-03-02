@@ -1,0 +1,51 @@
+@forward "../pages/auth";
+@forward "../pages/dashboard";
+
+.text-primary {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.01em;
+  text-align: right;
+  background: linear-gradient(135deg, #5d30be 0%, #b330be 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: var(--grey-bold);
+}
+
+.ShadInput {
+  border-radius: 8px;
+
+  /* Create a gradient border effect using background */
+  background: linear-gradient(to right, white, white) padding-box,
+    linear-gradient(135deg, #5d30be 0%, #b330be 100%) border-box;
+  padding: 8px;
+  /* This creates the border width */
+  outline: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  transition: all 0.5s ease;
+}
+
+.ShadInput:focus {
+  outline: none;
+  border-radius: 8px;
+  border: 2px solid; /* Need a border width defined */
+  border-image: linear-gradient(135deg, #5d30be 0%, #b330be 100%) 1;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Active state - when being clicked */
+.ShadInput:active {
+  background-color: #f0f7ff; /* Slight background color change */
+  transform: scale(0.97); /* Subtle pressed effect */
+}

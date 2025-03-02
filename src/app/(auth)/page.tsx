@@ -28,7 +28,7 @@ export default function Home() {
 
             <Link href={routes.dashboard.entry.path}>
               <Button
-                size="md"
+                size="lg"
                 className="app_survey__btn app_survey__btn--outline"
               >
                 See results

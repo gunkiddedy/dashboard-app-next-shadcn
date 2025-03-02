@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { type z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { type z } from "zod";
 
-import { Form, FormField } from '@/components/ui/form';
+import { Form, FormField } from "@/components/ui/form";
 
-import FormInput from '@/components/FormInput';
-import Button from '@/components/Button';
-import { accountAccessSchema } from '@/schema/employee/accountAccess';
-import { AlertDialog } from '@/components/Alert';
-import dashboardIcons from '@/lib/assets/dashboard';
+import FormInput from "@/components/FormInput";
+import Button from "@/components/Button";
+import { accountAccessSchema } from "@/schema/employee/accountAccess";
+import { AlertDialog } from "@/components/Alert";
+import dashboardIcons from "@/lib/assets/dashboard";
 
 const AccountAccessForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,10 +20,10 @@ const AccountAccessForm = () => {
   const form = useForm<z.infer<typeof accountAccessSchema>>({
     resolver: zodResolver(accountAccessSchema),
     defaultValues: {
-      slackId: '',
-      githubId: '',
-      skypeId: '',
-      trelloId: '',
+      slackId: "",
+      githubId: "",
+      skypeId: "",
+      trelloId: "",
     },
   });
 
@@ -33,12 +33,12 @@ const AccountAccessForm = () => {
     formState: { errors },
   } = form;
 
-  const alertDialogRef = useRef();
+  const alertDialogRef = useRef<{ openDialog: () => void }>(null);
 
   const onSubmit = async (values: z.infer<typeof accountAccessSchema>) => {
     setLoading(true);
     try {
-      console.log('Account Access Form', values);
+      console.log("Account Access Form", values);
       if (alertDialogRef.current) {
         alertDialogRef.current.openDialog(); // Open the dialog
       }
@@ -54,7 +54,7 @@ const AccountAccessForm = () => {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(onSubmit, (err) => {
-            console.log('error is', err);
+            console.log("error is", err);
           })}
           className="flex flex-col space-y-8"
         >

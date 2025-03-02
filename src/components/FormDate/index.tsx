@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { format } from 'date-fns';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Calendar } from '@/components/ui/calendar';
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   FormControl,
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
+} from "@/components/ui/form";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { FieldError } from 'react-hook-form';
-import { RenderIf } from '../shared';
-import Image from 'next/image';
-import dashboardIcons from '@/lib/assets/dashboard';
+} from "@/components/ui/popover";
+import { FieldError } from "react-hook-form";
+import { RenderIf } from "../shared";
+import Image from "next/image";
+import dashboardIcons from "@/lib/assets/dashboard";
 
 interface IProps {
   value: Date;
@@ -41,12 +41,12 @@ export function FormDatePicker(props: IProps) {
     containerClass,
     className,
     classButton,
-    useIcon,
+    useIcon = false,
     error,
   } = props;
   return (
     <FormItem
-      className={cn('flex flex-col', {
+      className={cn("flex flex-col", {
         [`${containerClass}`]: !!containerClass,
       })}
     >
@@ -58,10 +58,10 @@ export function FormDatePicker(props: IProps) {
               <Button
                 variant="outline"
                 className={cn(`${classButton} w-full text-left justify-start`, {
-                  'text-black': value,
+                  "text-black": value,
                 })}
               >
-                {value ? format(value, 'PPP') : placeholder}
+                {value ? format(value, "PPP") : placeholder}
               </Button>
               <RenderIf condition={useIcon}>
                 <Image

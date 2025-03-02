@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 interface StatusBadgeProps {
-  status: string | Number;
+  status: string;
   className?: String;
 }
 
@@ -26,7 +26,15 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
   );
 }
 
-export function StatusBadgeLeftIcon({ status, leftIcon }) {
+interface StatusBadgeLeftIconProps {
+  status: string;
+  leftIcon: string;
+}
+
+export function StatusBadgeLeftIcon({
+  status,
+  leftIcon,
+}: StatusBadgeLeftIconProps) {
   return (
     <div
       className={clsx(
@@ -55,7 +63,15 @@ export function StatusBadgeLeftIcon({ status, leftIcon }) {
   );
 }
 
-export function StatusBadgeRightIcon({ status, rightIcon }) {
+interface StatusBadgeRightIconProps {
+  status: string;
+  rightIcon: string;
+}
+
+export function StatusBadgeRightIcon({
+  status,
+  rightIcon,
+}: StatusBadgeRightIconProps) {
   return (
     <div
       className={clsx(

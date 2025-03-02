@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { type z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { type z } from "zod";
 
-import { Form, FormField } from '@/components/ui/form';
+import { Form, FormField } from "@/components/ui/form";
 
-import FormInput from '@/components/FormInput';
-import Button from '@/components/Button';
-import { documentsSchema } from '@/schema/employee/documents';
-import FileUpload from '@/components/FileUpload/FileUploadV1';
-import authAssets from '@/lib/assets/auth';
-import dashboardIcons from '@/lib/assets/dashboard';
-import { CircleUploadIcon } from '@/components/shared/svgs';
+import FormInput from "@/components/FormInput";
+import Button from "@/components/Button";
+import { documentsSchema } from "@/schema/employee/documents";
+import FileUpload from "@/components/FileUpload/FileUploadV1";
+import authAssets from "@/lib/assets/auth";
+import dashboardIcons from "@/lib/assets/dashboard";
+import { CircleUploadIcon } from "@/components/shared/svgs";
 
 const DocumentsForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,7 +31,7 @@ const DocumentsForm = () => {
   const onSubmit = async (values: z.infer<typeof documentsSchema>) => {
     setLoading(true);
     try {
-      console.log('Personal Information Form', values);
+      console.log("Personal Information Form", values);
     } catch (error) {
       // TODO: show toast
     } finally {
@@ -44,7 +44,7 @@ const DocumentsForm = () => {
       <Form {...form}>
         <form
           onSubmit={handleSubmit(onSubmit, (err) => {
-            console.log('error is', err);
+            console.log("error is", err);
           })}
           className="flex flex-col space-y-8"
         >
@@ -55,7 +55,7 @@ const DocumentsForm = () => {
               </p>
               <FormField
                 control={control}
-                name="employeeId"
+                name="resumeFile"
                 render={({ field }) => (
                   <FileUpload
                     containerClass="mb-3"
@@ -63,10 +63,10 @@ const DocumentsForm = () => {
                       field.onChange(e);
                     }}
                     accept={{
-                      'application/pdf': ['.pdf'],
-                      'application/msword': ['.doc'],
-                      'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                        ['.docx'],
+                      "application/pdf": [".pdf"],
+                      "application/msword": [".doc"],
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                        [".docx"],
                     }}
                     // error={errors.resume}
                   >
@@ -78,7 +78,7 @@ const DocumentsForm = () => {
                     </div>
                     {/* body text */}
                     <p className="text-sm font-normal mt-2">
-                      Drag & Drop or{' '}
+                      Drag & Drop or{" "}
                       <span className="text-primary">choose file</span> to
                       upload
                     </p>
@@ -94,7 +94,7 @@ const DocumentsForm = () => {
               </p>
               <FormField
                 control={control}
-                name="employeeId"
+                name="appointmentLetterFile"
                 render={({ field }) => (
                   <FileUpload
                     containerClass="mb-3"
@@ -102,10 +102,10 @@ const DocumentsForm = () => {
                       field.onChange(e);
                     }}
                     accept={{
-                      'application/pdf': ['.pdf'],
-                      'application/msword': ['.doc'],
-                      'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                        ['.docx'],
+                      "application/pdf": [".pdf"],
+                      "application/msword": [".doc"],
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                        [".docx"],
                     }}
                     // error={errors.resume}
                   >
@@ -117,7 +117,7 @@ const DocumentsForm = () => {
                     </div>
                     {/* body text */}
                     <p className="text-sm font-normal mt-2">
-                      Drag & Drop or{' '}
+                      Drag & Drop or{" "}
                       <span className="text-primary">choose file</span> to
                       upload
                     </p>
@@ -133,7 +133,7 @@ const DocumentsForm = () => {
               </p>
               <FormField
                 control={control}
-                name="employeeId"
+                name="salarySlipsFile"
                 render={({ field }) => (
                   <FileUpload
                     containerClass="mb-3"
@@ -141,10 +141,10 @@ const DocumentsForm = () => {
                       field.onChange(e);
                     }}
                     accept={{
-                      'application/pdf': ['.pdf'],
-                      'application/msword': ['.doc'],
-                      'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                        ['.docx'],
+                      "application/pdf": [".pdf"],
+                      "application/msword": [".doc"],
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                        [".docx"],
                     }}
                     // error={errors.resume}
                   >
@@ -156,7 +156,7 @@ const DocumentsForm = () => {
                     </div>
                     {/* body text */}
                     <p className="text-sm font-normal mt-2">
-                      Drag & Drop or{' '}
+                      Drag & Drop or{" "}
                       <span className="text-primary">choose file</span> to
                       upload
                     </p>
@@ -172,7 +172,7 @@ const DocumentsForm = () => {
               </p>
               <FormField
                 control={control}
-                name="employeeId"
+                name="relievingLetterFile"
                 render={({ field }) => (
                   <FileUpload
                     containerClass="mb-3"
@@ -180,10 +180,10 @@ const DocumentsForm = () => {
                       field.onChange(e);
                     }}
                     accept={{
-                      'application/pdf': ['.pdf'],
-                      'application/msword': ['.doc'],
-                      'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                        ['.docx'],
+                      "application/pdf": [".pdf"],
+                      "application/msword": [".doc"],
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                        [".docx"],
                     }}
                     // error={errors.resume}
                   >
@@ -195,7 +195,7 @@ const DocumentsForm = () => {
                     </div>
                     {/* body text */}
                     <p className="text-sm font-normal mt-2">
-                      Drag & Drop or{' '}
+                      Drag & Drop or{" "}
                       <span className="text-primary">choose file</span> to
                       upload
                     </p>

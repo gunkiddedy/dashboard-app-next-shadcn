@@ -37,7 +37,7 @@ export function NotificationPopover() {
 
           <RenderIf condition={false}>
             <div className="flex justify-center items-center app_dashboard_header__ctt__notification__empty">
-              <Image src={dashboard.emptyNotification} alt="empty" />
+              <Image src={dashboard.bellIcon} alt="empty" />
             </div>
             <div className="px-4 pt-2 pb-5">
               <p className="text-center app_dashboard_header__ctt__notification__empty_text">
@@ -52,7 +52,7 @@ export function NotificationPopover() {
           <RenderIf condition={true}>
             <div className="app_dashboard_header__ctt__message__item flex items-center gap-3 py-3 px-4">
               <div className="app_dashboard_header__ctt__message__item__avi">
-                <Image src={dashboard.avi} alt="avi" />
+                <Image src={dashboard.bellIcon} alt="bell icon" />
               </div>
 
               <div className="flex-1">

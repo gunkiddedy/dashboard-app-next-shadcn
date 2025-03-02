@@ -9,7 +9,7 @@ import { capitalizeFirstLetter, cn } from "@/lib/utils";
 const THEMES = { light: "", dark: ".dark" } as const;
 
 export type ChartConfig = {
-  [k in string]: {
+  [k: string]: {
     label?: React.ReactNode;
     icon?: React.ComponentType;
   } & (

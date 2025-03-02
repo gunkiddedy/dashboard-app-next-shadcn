@@ -65,7 +65,7 @@ const SelectItemComp = ({ label, items, placeholder }: SelectItemProps) => {
   );
 };
 
-export const settingsPage = () => {
+export default function SettingsPage() {
   return (
     <>
       <div className="flex items-center space-x-2 mb-6">
@@ -212,6 +212,6 @@ export const settingsPage = () => {
       </div>
     </>
   );
-};
+}
 
-export default settingsPage;
+// export default settingsPage;

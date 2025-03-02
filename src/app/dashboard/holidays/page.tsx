@@ -145,7 +145,7 @@ const CardHolidayList = () => {
   );
 };
 
-export const holidaysPage = () => {
+export default function HolidaysPage() {
   return (
     <>
       <div className="flex items-center space-x-2 mb-6">
@@ -189,6 +189,6 @@ export const holidaysPage = () => {
       </div>
     </>
   );
-};
+}
 
-export default holidaysPage;
+// export default holidaysPage;

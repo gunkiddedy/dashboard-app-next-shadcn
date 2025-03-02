@@ -222,7 +222,7 @@ const CardPayrollList = () => {
   );
 };
 
-export const leavesPage = () => {
+export default function LeavesPage() {
   return (
     <>
       <div className="flex items-center space-x-2 mb-6">
@@ -266,6 +266,6 @@ export const leavesPage = () => {
       </div>
     </>
   );
-};
+}
 
-export default leavesPage;
+// export default leavesPage;

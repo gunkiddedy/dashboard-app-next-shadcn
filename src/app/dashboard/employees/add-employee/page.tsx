@@ -11,7 +11,7 @@ import {
 import { MyTabs } from "@/components/Tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const addEmployeePage = () => {
+export default function AddEmployeePage() {
   const handleTabChange = (value: string) => {
     console.log("Active tab:", value);
   };
@@ -73,6 +73,6 @@ export const addEmployeePage = () => {
       onValueChange={handleTabChange}
     />
   );
-};
+}
 
-export default addEmployeePage;
+// export default addEmployeePage;

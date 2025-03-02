@@ -222,7 +222,7 @@ const CardPayrollList = () => {
   );
 };
 
-export const employeePage = () => {
+export default function EmployeePage() {
   return (
     <>
       <div className="flex items-center space-x-2 mb-6">
@@ -266,6 +266,6 @@ export const employeePage = () => {
       </div>
     </>
   );
-};
+}
 
-export default employeePage;
+// export default employeePage;

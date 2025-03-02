@@ -26,7 +26,7 @@ const EMPLOYEE_COLUMNS = [
   {
     header: "Employee Name",
     accessorKey: "employeeName",
-    cell: ({ cell, row }) => {
+    cell: ({ cell, row }: { cell: any; row: any }) => {
       return (
         <div className="flex items-center space-x-2">
           <MyAvatar
@@ -57,7 +57,7 @@ const EMPLOYEE_COLUMNS = [
   {
     header: "Status",
     accessorKey: "status",
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return (
         <StatusBadge className="font-normal" status={row.original.status} />
       );
@@ -65,7 +65,7 @@ const EMPLOYEE_COLUMNS = [
   },
   {
     header: "Action",
-    cell: ({ cell, row }) => {
+    cell: ({ cell, row }: { cell: any; row: any }) => {
       const employeeId = row.original.employeeId;
       function handleClick() {
         console.log(employeeId);
@@ -77,21 +77,21 @@ const EMPLOYEE_COLUMNS = [
             className="w-7 h-7 rounded-full px-0.5 hover:bg-slate-200 hover:outline-none"
             icon={dashboardIcons.viewIcon}
             classIcon="w-6 h-6"
-            variant="neutral"
+            variant="default"
             onClick={handleClick}
           />
           <Button
             className="w-7 h-7 rounded-full px-0.5 hover:bg-slate-200 hover:outline-none"
             icon={dashboardIcons.editIcon}
             classIcon="w-6 h-6"
-            variant="neutral"
+            variant="default"
             onClick={handleClick}
           />
           <Button
             className="w-7 h-7 rounded-full px-0.5 hover:bg-slate-200 hover:outline-none"
             icon={dashboardIcons.trashIcon}
             classIcon="w-6 h-6"
-            variant="neutral"
+            variant="default"
             onClick={handleClick}
           />
         </div>
@@ -108,7 +108,7 @@ const arrowRoundedLittleIcon = () => (
   />
 );
 
-const badgeIconStatus = (status) => {
+const badgeIconStatus = (status: string) => {
   return (
     <StatusBadgeLeftIcon
       status={status}
@@ -140,7 +140,7 @@ const CardEmployeeList = () => {
   // State to hold the selected value
   const [selected, setSelected] = useState("");
 
-  const alertDialogFilterRef = useRef<unknown>(null);
+  const alertDialogFilterRef = useRef<{ openDialog: () => void }>(null);
 
   const handleClickFilter = () => {
     console.log("handleClickFilter");
